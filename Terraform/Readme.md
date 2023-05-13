@@ -52,10 +52,13 @@ variable "availability_zone_names" {
 - After the deployment is finished terraform creates a state file to keep a track of current state of the infrastructure.
 - It will use this file to compare when you deploy/destroy resources, in other words it compares "current state" with "desired state" using this file.
 - A file with name of "terraform.tfstate" will be created in your working directory
+#### Restoring Statefile:
+- If the statefile is deleted or corrupted, we can restore it using terraform import command
 
-    Restoring Statefile:
-        - If the statefile is deleted or corrupted, we can restore it using terraform import command
-        Example: ```terraform import <terraform resource name> <resource id> ```
+Example:
+```
+terraform import <terraform resource name> <resource id> 
+```
 ### Provisioners:
 - Provisioners provide the ability to run additional steps or task when a resource is created or destroyed.
 - This is not a replacement for configuration management tool.
